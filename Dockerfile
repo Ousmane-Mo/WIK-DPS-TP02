@@ -1,4 +1,6 @@
 FROM node
+RUN useradd -ms /bin/bash benzema
+USER benzema
 WORKDIR /app
 COPY ["package.json", "package-lock.json", "/"]
 RUN ["npm", "install"]
